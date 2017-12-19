@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Transform Demo</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, .view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: red;
+}
+
+.view {
+  display: flex;
+}
+
+.view-1,
+.view-2 {
+  position: relative;
+  flex: 1;
+}
+
+.view-1 {
+  background-color: #fcc;
+}
+
+.view-2 {
+  background-color: #ccf;
+}
+
+.view-1:after,
+.view-2:after {
+  position: absolute;
+  display: block;
+  font-weight: bold;
+  left: 0.5em;
+  top: 0.5em;
+}
+
+.view-1:after {
+  content: "neko-1";
+}
+
+.view-2:after {
+  content: "neko-2";
+}
+
+.css {
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  padding: 1em;
+  white-space: pre-wrap;
+  right: 0;
+  bottom: 0;
+  max-height: 100%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+.neko-1, .neko-2, .neko-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.neko-shadow {
+  opacity: 0.3;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="view">
+      <div class="view-1">
+        <img class="neko-shadow" src="neko.png" alt="" />
+        <img class="neko-1" src="neko.png" alt="" />
+      </div>
+      <div class="view-2">
+        <img class="neko-shadow" src="neko.png" alt="" />
+        <img class="neko-2" src="neko.png" alt="" />
+      </div>
+
+<style class="css" contenteditable="true">.neko-1 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.neko-2 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}</style>
+    </div>
+  </body>
+</html>
